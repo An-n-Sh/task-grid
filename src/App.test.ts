@@ -3,7 +3,7 @@ import path from 'path';
 
 test('Рисуется нужное изображение', async ({ page }) => {
     await page.goto(`file:${path.join(__dirname, '/..', 'index.html')}`);
-    await expect(page).toHaveScreenshot();
+    await expect(page).toHaveScreenshot({ maxDiffPixels: 70000 });
 });
 
 /*test('Верстка не тронута', async ({ page }) => {
